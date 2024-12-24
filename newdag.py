@@ -14,7 +14,7 @@ default_args = {
 
 # Define the DAG
 dag = DAG(
-    "my-test-dag",
+    "my-test-dag3",
     default_args=default_args,
     description="Execute a Python script stored in S3",
     schedule_interval=None,
