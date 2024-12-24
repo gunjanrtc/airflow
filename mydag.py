@@ -21,11 +21,21 @@ dag = DAG(
 )
 
 # Step 1: Execute the Python script with input
-execute_script_task = BashOperator(
-    task_id="execute_script",
+execute_script_task1 = BashOperator(
+    task_id="execute_script1",
+    bash_command='echo "Starting sleep task"; sleep 50; echo "Finished sleep task"',
+    dag=dag,
+)
+execute_script_task2 = BashOperator(
+    task_id="execute_script2",
+    bash_command='echo "Starting sleep task"; sleep 50; echo "Finished sleep task"',
+    dag=dag,
+)
+execute_script_task3 = BashOperator(
+    task_id="execute_script3",
     bash_command='echo "Starting sleep task"; sleep 50; echo "Finished sleep task"',
     dag=dag,
 )
 
 # Define task dependencies
-execute_script_task
+execute_script_task1 >> execute_script_task2 << execute_script_task3
