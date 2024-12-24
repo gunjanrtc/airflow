@@ -25,7 +25,7 @@ dag = DAG(
 # Step 1: Execute the Python script for ETL process
 execute_script_task = BashOperator(
     task_id="execute_script",
-    bash_command=f"python3 /usr/local/airflow/dags/py_scripts/python_script.py",
+    bash_command=f"python3 /home/ubuntu/airflow/dags/airflow/py_scripts/python_script.py",
     dag=dag,
 )
 
