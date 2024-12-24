@@ -37,7 +37,7 @@ bash_task = BashOperator(
 )
 execute_script_task3 = BashOperator(
     task_id="execute_script3",
-    bash_command='echo "Starting sleep task"; sleep 50; echo "Finished sleep task"',
+    bash_command='echo "start sleeping"; sleep 50',
     dag=dag,
 )
 # Define task dependencies
